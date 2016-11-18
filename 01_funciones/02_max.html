@@ -18,21 +18,28 @@
           var n1 = document.querySelector("#numero1").value;
           var n2 = document.querySelector("#numero2").value;
 
-          var max = max(n1, n2);
+          var maximo = max(n1, n2);
 
           var resultado = document.querySelector("#resultado");
-          resultado.innerHTML = "Max: " + max;
+          resultado.innerHTML = "Max: " + maximo;
         }
 
-        function max(numero1, numero2) {
+        function max(numero1 , numero2) {
           /*
             Ejercicio: Terminar esta función para retornar el valor máximo
             de los números numero1 y numero2. Usa "if" y "else" para calcularlo.
            */
 
           // Tu código acá!
-        }
 
+        var  maximo
+
+        if(numero1 > numero2 ){
+          maximo = numero1;
+          }else {
+          maximo = numero2;
+         }
+         return maximo;
 
         }
     </script>

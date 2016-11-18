@@ -12,22 +12,32 @@
       Número 2: <input type="text" name="numero2" id="numero2"><br />
       Número 3: <input type="text" name="numero3" id="numero3"><br />
       <button onclick="calcular_max();">Calcular!</button>
+
       <div id="resultado"></div>
     </div>
     <script>
         function calcular_max() {
-          /*
-            Ejercicio: Copia tu función "max" del ejercicio 2 y pegarlo abajo
-            de esta función (después del colchete de cierre). Termina esta
-            función para llamar a "max" varias veces para calcular el valor
-            máximo de los tres números entrados y escribir el resultado en
-            el div "#resultado".
-           */
+          var n1 = document.querySelector("#numero1").value;
+          var n2 = document.querySelector("#numero2").value;
+          var n2 = document.querySelector("#numero3").value;
 
-          // Tu código acá!
+      var maximo = max(n1, n2);
+      maximo = max (n2, n1);
+      var resultado = document.querySelector("#resultado");
+      resultado.innerHTML = "Max: " + maximo;
+}
+
+  function max(numero1 , numero2) {
+        var  maximo
+
+        if(numero1 > numero2 ){
+          maximo = numero1;
+          }else {
+          maximo = numero2;
+         }
+         return maximo;
+
         }
-
-        // Pega tu función "max" acá:
 
     </script>
   </body>
