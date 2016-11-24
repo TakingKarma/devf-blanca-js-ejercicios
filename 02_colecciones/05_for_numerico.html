@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>For numerico</title>
+    <link rel="stylesheet" href="../_recursos/main.css">
+  </head>
+  <body>
+    <h1>For Numérico</h1>
+    <label for="numero_amigos">¿Cuantos amigos tienes?</label>
+    <input type="numero_amigos" id="numero_amigos">
+    <button onclick="crear_inputs();"> crear inputs</button>
+    Introduce tus 5 amigo más cercanos:
+
+    <div id="resultado"></div>
+
+    </div>
+
+
+    <script>
+    function crear_inputs(){
+       var resultado =document.querySelector("#resultado");
+       var n_amigos = document.querySelector("#numero_amigos").value;
+
+       n_amigos = parseInt(n_amigos);
+
+       resultado.innerHTML = "";
+
+       for(var i=1; i <= n_amigos; i++){
+       //console.log(i);
+       resultado.innerHTML += "Amigo" + i + ": <input type='text'><br>";
+    }
+  }
+    </script>
+  </body>
+</html>

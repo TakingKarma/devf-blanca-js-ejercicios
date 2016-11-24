@@ -8,10 +8,63 @@
 <body>
   <h1> Arreglos </h1>
 
-  <script>
+  <label for="seleccion"> Escoge tu arma:</label>
 
-    // Hola Héctor!! Esta línea escribió Brian.
-    "esto debe ser un conflicto"
+  <select name="seleccion" id="seleccion">
+  <option value="piedra"> Piedra </option>
+  <option value="papel"> Papel </option>
+  <option value="tijeras"> Tijeras </option>
+  </select>
+
+  <button onclick="jugar();">
+    JUGAR
+  </button>
+
+  <div id="resultado"></div>
+
+  </div>
+  <script>
+  function jugar() {
+
+
+   var items = ["piedra", "papel", "tijeras"];
+   //               0   ,    1   ,     2
+   var seleccion_maquina = maquina_escoge(items);
+   var seleccion_jugador = document.querySelector("#seleccion").value;
+
+  var reglas = {
+    piedra: { papel: "pierde", tijeras: "gana"},
+    papel: { tijeras: "pierde", piedra:" gana"},
+    tijeras: { piedra: "pierde", papel: "gana"}
+  };
+
+   var ganador = definir_ganador(seleccion_jugador, seleccion_maquina, reglas);
+   dibujar("La maquina_escoge:" + seleccion_maquina + ", por lo tanto:" +
+ ganador);
+}
+
+
+function definir_ganador(s_jugador, s_maquina, reglas){
+  if (s_maquina == s_jugador){
+    return "empate";
+}
+
+  var regla = reglas[s_jugador];
+  return regla [s_maquina];
+}
+
+function maquina_escoge(items){
+  var n_random = Math.floor(Math.random() * 3);
+  return items[n_random]
+}
+
+function dibujar(valor) {
+  document.querySelector("#resultado").innerHTML = valor;
+}
+
+
+
+
 
   </script>
 </body>
