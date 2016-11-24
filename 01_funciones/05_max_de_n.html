@@ -3,13 +3,14 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="../_recursos/main.css">
-    <title>Dev.F JS Ejercicios - Funciones - 02. Máximo</title>
+    <title>Dev.F JS Ejercicios - Funciones - 03. Máximo de tres</title>
   </head>
   <body>
-    <h1>Máximo</h1>
+    <h1>Máximo de tres números</h1>
     <div class="formulario">
       Número 1: <input type="text" name="numero1" id="numero1"><br />
       Número 2: <input type="text" name="numero2" id="numero2"><br />
+      Número 3: <input type="text" name="numero3" id="numero3"><br />
       <button onclick="calcular_max();">Calcular!</button>
       <div id="resultado"></div>
     </div>
@@ -24,22 +25,14 @@
           resultado.innerHTML = "Max: " + maximo;
         }
 
-        function max(numero1 , numero2) {
-          /*
-            Ejercicio: Terminar esta función para retornar el valor máximo
-            de los números numero1 y numero2. Usa "if" y "else" para calcularlo.
-           */
-          // Tu código acá!
-
-        var  maximo
-
-        if(numero1 > numero2 ){
-          maximo = numero1;
-          }else {
-          maximo = numero2;
-         }
-         return maximo;
+        fucntion max(n1, n2) {
+          if (n1>n2) {
+            return n1;
+          }
+          return n2;
         }
+
+        // Pega tu función "max" acá:
 
     </script>
   </body>
