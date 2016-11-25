@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../_recursos/main.css">
+    <title>Dev.F JS Ejercicios - Colecciones - 02. Máximo de N</title>
+  </head>
+  <body>
+    <h1>Máximo de N números</h1>
+    <div class="formulario">
+      <p>Escribe cualquier cantidad de números, separados por espacios
+        o comas, y te muestro el máximo.</p>
+      Números: <input type="text" name="numeros" id="numeros"><br />
+      <button onclick="calcular_max();">Calcular!</button>
+      <div id="resultado"></div>
+    </div>
+    <script>
+
+        function max_de_n(numeros) {
+          var maximo = 0;
+
+
+
+           for (i in numeros){
+              n_actual = parseInt(numeros[i]);
+              if(n_actual > maximo){
+                maximo =n_actual;
+              }
+
+           }
+          return maximo;
+        }
+
+        function calcular_max() {
+          var numeros = document.querySelector("#numeros").value;
+          numeros = numeros.split(/[ ,]+/);
+
+          var maximo = max_de_n(numeros);
+
+          var resultado = document.querySelector("#resultado");
+          resultado.innerHTML = "Max: " + maximo;
+        }
+
+    </script>
+  </body>
+</html>

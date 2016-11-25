@@ -8,12 +8,21 @@
 <body>
   <h1> Arreglos </h1>
 
+<<<<<<< HEAD
   <label for="seleccion"> Escoge tu arma:</label>
 
   <select name="seleccion" id="seleccion">
   <option value="piedra"> Piedra </option>
   <option value="papel"> Papel </option>
   <option value="tijeras"> Tijeras </option>
+=======
+  <label for="seleccion"> Escoge tu arma: </label>
+
+  <select name="seleccion" id="seleccion">
+    <option value="piedra"> Piedra </option>
+    <option value="papel"> Papel </option>
+    <option value="tijeras"> Tijeras </option>
+>>>>>>> bd3de95333a9d0b6705a798c262e45304256a9fd
   </select>
 
   <button onclick="jugar();">
@@ -22,6 +31,7 @@
 
   <div id="resultado"></div>
 
+<<<<<<< HEAD
   </div>
   <script>
   function jugar() {
@@ -65,6 +75,47 @@ function dibujar(valor) {
 
 
 
+=======
+  <script>
+    function jugar() {
+      var items = ["piedra", "papel", "tijeras"];
+
+      var seleccion_maquina = maquina_escoge(items); // siempre piedra
+      var seleccion_jugador = document.querySelector("#seleccion").value;
+
+      var reglas = {
+        piedra: { papel: "Pierdes :(((", tijeras: "Ganas !! o/"},
+        papel:  { tijeras: "Pierdes :(((", piedra: "Ganas !! o/"},
+        tijeras: { piedra: "Pierdes :(((", papel: "Ganas !! o/"},
+      };
+
+      var ganador = definir_ganador(seleccion_jugador, seleccion_maquina, reglas);
+
+      dibujar("La maquina escogió: " +  seleccion_maquina + ", por lo tanto: " + ganador);
+    }
+
+    function definir_ganador(s_jugador, s_maquina, reglas){
+        if(s_maquina == s_jugador){
+          return "Empatas -.-";
+        }
+        var regla = reglas[s_jugador];
+        return regla[s_maquina];
+    }
+
+    function maquina_escoge(items){
+      var n_random =  Math.floor(Math.random() * 3);
+      return items[n_random];
+    }
+
+
+    function dibujar(valor){
+      document.querySelector("#resultado").innerHTML = valor;
+    }
+
+    // function agregar_a_reusltado(valor){
+    //   // append
+    // }
+>>>>>>> bd3de95333a9d0b6705a798c262e45304256a9fd
 
   </script>
 </body>

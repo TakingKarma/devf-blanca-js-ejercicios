@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../_recursos/main.css">
+    <title>Dev.F JS Ejercicios - Colecciones - 03. FizzBuzz</title>
+  </head>
+  <body>
+    <h1>Máximo de N números</h1>
+    <div class="formulario">
+      <button onclick="correr_fizz_buzz();">FizzBuzz!</button>
+      <div id="resultado"></div>
+    </div>
+    <script>
+
+        function fizz_buzz(max) {
+
+          for (var i = 0; i <= max; i++) {
+          var resulatdo = "";
+          if ((i % 3)==0){
+            print("Fizz", true);
+          }
+          if (!(i % 5)) {
+            print("Buzz", true);
+          }
+          if (resulatdo) {
+            print(resulatdo, true);
+          }  else{
+              print(i, true);
+            }
+          }
+        }
+
+        function correr_fizz_buzz() {
+          fizz_buzz(100);
+        }
+
+        function print(valor, append) {
+          var resultado = document.querySelector("#resultado");
+          if (append) {
+            resultado.innerHTML += valor + "<br>";
+          } else {
+            resultado.innerHTML = valor + "<br>";
+          }
+        }
+
+    </script>
+  </body>
+</html>
