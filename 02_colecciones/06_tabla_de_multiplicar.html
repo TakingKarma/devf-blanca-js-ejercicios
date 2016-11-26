@@ -8,22 +8,24 @@
   <body>
     <h1>Tabla de multiplicar</h1>
     <div class="formulario">
-      Mínimo: <input type="text" name="minimo" id="minimo"><br />
-      Máximo: <input type="text" name="maximo" id="maximo"><br />
+      Mínimo: <input type="text" name="minimo"id="minimo"><br/>
+      Máximo: <input type="text" name="maximo"id="maximo"><br />
       <button onclick="dibujar_tabla();">Dibujar Tabla!</button>
       <div id="resultado"></div>
     </div>
     <script>
 
         function dibujar_tabla() {
-          var maximo;
-
-          /*
-            Ejercicio: Leer minimo y maximo de la pagina, y dibujar una
-            tabla con los productos de todos los numeros entre minimo y maximo.
-           */
-
-          return maximo;
+          var minimo= parseInt(document.querySelector("#minimo").value);
+          var maximo= parseInt(document.querySelector("#maximo").value);
+          var resultado = document.querySelector("#resultado");
+          
+        for ( i = minimo; i <= maximo; i++) {
+          for (var j = maximo; j <= maximo; j++) {
+            var resultado = i * j
+            document.querySelector("#resultado").innerHTML += i + "*" + j + "=" + resultado + "<br>"
+            }
+          }
         }
 
     </script>
