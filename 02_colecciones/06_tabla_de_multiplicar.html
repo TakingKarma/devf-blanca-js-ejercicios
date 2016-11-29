@@ -13,18 +13,33 @@
       <button onclick="dibujar_tabla();">Dibujar Tabla!</button>
       <div id="resultado"></div>
     </div>
+
+    <table>
+      <tr>
+        <td>0</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>3</td>
+      </tr>
+    </table>
+
     <script>
 
         function dibujar_tabla() {
           var minimo= parseInt(document.querySelector("#minimo").value);
           var maximo= parseInt(document.querySelector("#maximo").value);
           var resultado = document.querySelector("#resultado");
-          
+
         for ( i = minimo; i <= maximo; i++) {
           for (var j = maximo; j <= maximo; j++) {
             var resultado = i * j
-            document.querySelector("#resultado").innerHTML += i + "*" + j + "=" + resultado + "<br>"
+            document.querySelector("#resultado").innerHTML += i + "*" + j + "=" + resultado + "<br>";
+            var html = "<table>"
+                
             }
+
           }
         }
 
