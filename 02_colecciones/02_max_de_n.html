@@ -17,7 +17,13 @@
     <script>
 
         function max_de_n(numeros) {
+<<<<<<< HEAD
           var maximo = 0;
+=======
+          console.log(numeros); // Puedes ver en la consola que este es un
+                                // array de números.
+          var maximo;
+>>>>>>> c6f4f9c5d799ca3e47563d5c015e9f242a966d80
 
 
 
@@ -30,10 +36,19 @@
            }
           return maximo;
         }
+<<<<<<< HEAD
+=======
+        // **************************************
+        // Puedes ignorar todo de acá para abajo.
+        // **************************************
+>>>>>>> c6f4f9c5d799ca3e47563d5c015e9f242a966d80
 
         function calcular_max() {
           var numeros = document.querySelector("#numeros").value;
-          numeros = numeros.split(/[ ,]+/);
+          function parse_item_with_index(item, index) {
+              return parseInt(item);
+          }
+          numeros = numeros.split(/[ ,]+/).map(parse_item_with_index);
 
           var maximo = max_de_n(numeros);
 

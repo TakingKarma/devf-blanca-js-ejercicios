@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../_recursos/main.css">
+    <title>Dev.F JS Ejercicios - Colecciones - 07. Select Dinamico</title>
+  </head>
+  <body>
+    <h1>Select Dinámico</h1>
+    <div class="formulario">
+      País: <select name="pais" id="pais" onchange="actualizar_estados();"></select><br>
+      Estado: <select name="estado" id="estado"></select><br>
+      Codigo postal: <input type="text" name="codigo_postal" id="codigo_postal" onchar:>
+
+    </div>
+    <script>
+        function validar_codigo_postal(){
+          console.log("Valida Codigo Postal");
+          var codigo_postal = document.querySelector("#codigo_postal").value;
+
+          var mensaje=""
+          if(!isNaN(codigo_postal)){
+            mensaje += "codigo postal tiene que ser un numero";
+          }else if (codigo_postal.length != 5){
+              mensaje =+ "Codigo postal tiene que ser 5 digitos";
+          }
+          document.querySelector("@co_error").innerHTML = mensaje;
+        }
+        var estados = {
+          'México': [
+              'Aguascalientes', 'Baja California', 'Baja California Sur',
+              'Campeche', 'Chiapas', 'Chihuahua', 'Coahuila', 'Colima',
+              'Distrito Federal', 'Durango', 'Estado de México',
+              'Guanajuato', 'Guerrero', 'Hidalgo', 'Jalisco', 'Michoacán',
+              'Morelos', 'Nayarit', 'Nuevo León', 'Oaxaca', 'Puebla',
+              'Querétaro', 'Quintana Roo', 'San Luis Potosí', 'Sinaloa',
+              'Sonora', 'Tabasco', 'Tamaulipas', 'Tlaxcala', 'Veracruz',
+              'Yucatán', 'Zacatecas'],
+          'Estados Unidos': [
+              'Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California',
+              'Carolina del Norte', 'Carolina del Sur', 'Colorado',
+              'Connecticut', 'Dakota del Norte', 'Dakota del Sur',
+              'Delaware', 'Florida', 'Georgia', 'Hawái', 'Idaho', 'Illinois',
+              'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Luisiana', 'Maine',
+              'Maryland', 'Massachusetts', 'Michigan', 'Minnesota',
+              'Misisipi', 'Misuri', 'Montana', 'Nebraska', 'Nevada',
+              'Nueva Jersey', 'Nueva York', 'Nuevo Hamoshire',
+              'Nuevo México', 'Ohio', 'Oklahoma', 'Oregón', 'Pensilvania',
+              'Rhode Island', 'Tennessee', 'Texas', 'Utah', 'Vermont',
+              'Virginia', 'Virginia Occidental', 'Washington', 'Wisconsin',
+              'Wyoming'],
+          'Alemania': [
+              'Baden-Wurtemberg', 'Baja Sajonia', 'Baviera', 'Berlín',
+              'Brandeburgo', 'Bremen', 'Hamburgo', 'Hesse',
+              'Mecklemburgo-Pomerania Occidental',
+              'Renania del Norte-Westfalia', 'Renania-Palatinado', 'Sajonia',
+              'Sajonia-Anhalt', 'Sarre', 'Schleswig-Holstein', 'Turingia'],
+        }
+        /*
+            Ejercicio 1: Cuando carga la página, llena el select de países
+            con la lista de países.
+         */
+         var elemento_pais = document.querySelector("#pais");
+        for (var  pais in estados){
+          elemento_pais.innerHTML += "<option>" + pais + "</option>";
+
+        }
+
+        function actualizar_estados() {
+          /*
+            Ejercicio 2: Esta función será llamada cuando cambia la opción
+            seleccionada en el select de países. Leyendo el valor actual
+            de pais, llena el select de estados con la lista que corresponde.
+           */
+           console.log ("actualizar_estados!!");
+             var pais_selecionado = document.querySelector("#pais").value;
+             var estados_actuales =estados[pais_selecionado];
+             var elemento_estado = document.querySelector("#estado");
+             elemento_estado.innerHTML = "";
+
+             for(i in estados_actuales){
+               //console.log(estados_actuales[i]);
+
+                elemento_estado.innerHTML += "<option>" + estados_actuales [i] + "</option>";
+               }
+             }
+             actualizar_estados();
+
+    </script>
+  </body>
+</html>
